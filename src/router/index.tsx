@@ -1,20 +1,26 @@
+import { createBrowserRouter } from "react-router-dom";
+
 import NotFountPage from "@pages/404";
 import ErrorBoundary from "@pages/ErrorBoundary";
-import Home from "@pages/Home";
 import Login from "@pages/Login";
-import { createBrowserRouter } from "react-router-dom";
+import Layout from "@components/Layout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Layout />,
     ErrorBoundary,
     children: [
       {
-        path: "/login",
+        path: "/login2",
         element: <Login />,
       },
     ],
+  },
+
+  {
+    path: "/login",
+    element: <Login />,
   },
 
   {

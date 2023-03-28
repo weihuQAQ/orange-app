@@ -1,7 +1,7 @@
-import { FC } from "react";
+import { type FC } from 'react';
 
 const Fallback: FC = () => {
-  return <p>Performing initial data "load"</p>;
+  return <p>Performing initial data load</p>;
 };
 
 export default Fallback;
