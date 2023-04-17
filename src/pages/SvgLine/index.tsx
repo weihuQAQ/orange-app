@@ -1,7 +1,7 @@
-import type { FC } from 'react';
+import { FC, useState } from 'react';
 
 const SvgLine: FC = () => {
-  const sp = { x: 400, y: 30 };
+  const [sp] = useState({ x: 400, y: 30 });
   const controlPoint = { x: 100, y: 30 };
   const ep = { x: 60, y: 150 };
 
@@ -12,7 +12,7 @@ const SvgLine: FC = () => {
   `;
 
   return (
-    <div>
+    <div className="svg-container">
       <div>sp: {`${sp.x},${sp.y}`}</div>
       <div>control: {`${controlPoint.x},${controlPoint.y}`}</div>
       <div>control end: {`${(ep.x + controlPoint.x) / 2},${(ep.y + controlPoint.y) / 2}`}</div>

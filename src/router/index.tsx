@@ -13,7 +13,11 @@ export const router = createBrowserRouter([
     ErrorBoundary,
     children: [
       {
-        path: '/login2',
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/register',
         element: <Login />,
       },
     ],
@@ -22,11 +26,6 @@ export const router = createBrowserRouter([
   {
     path: '/svg',
     element: <SvgLine />,
-  },
-
-  {
-    path: '/login',
-    element: <Login />,
   },
 
   {

@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 
 const Fallback: FC = () => {
   return <p>Performing initial data load</p>;

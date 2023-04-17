@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import type { FC } from 'react';
 import { useRouteError } from 'react-router-dom';
 
 const ErrorBoundary: FC = () => {
