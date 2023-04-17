@@ -22,11 +22,10 @@ import {
 } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Link as RouterLink } from 'react-router-dom';
 import Copyright from '@components/Copyright';
+import LinkBehavior from '@components/LinkBehavior';
 
 import './index.scss';
-import LinkBehavior from '@components/LinkBehavior';
 
 interface LoginFormNames {
   username: string;
