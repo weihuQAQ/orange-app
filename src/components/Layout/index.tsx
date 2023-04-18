@@ -3,11 +3,7 @@ import React from 'react';
 import { Outlet } from 'react-router';
 
 const Layout: FC = () => {
-  return (
-    <div>
-      <Outlet />
-    </div>
-  );
+  return <Outlet />;
 };
 
 export default Layout;
