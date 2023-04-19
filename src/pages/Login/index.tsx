@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import {
@@ -7,7 +7,6 @@ import {
   Button,
   Checkbox,
   Container,
-  CssBaseline,
   FormControlLabel,
   Typography,
   Link,
@@ -18,10 +17,15 @@ import {
   Card,
   CardContent,
   CardHeader,
+  Paper,
 } from '@mui/material';
+import { Visibility, VisibilityOff, LightMode, DarkMode } from '@mui/icons-material';
+
 import Copyright from '@components/Copyright';
 import LinkBehavior from '@components/LinkBehavior';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '@store';
+import { changeThemeMode } from '@store/system';
 
 interface LoginFormNames {
   username: string;
@@ -29,21 +33,11 @@ interface LoginFormNames {
   remember: boolean;
 }
 
-const DivBGContainer = styled('div')(`
-  background-color: rgb(255, 255, 255);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-image: url('/assets/gradient-bg.svg');
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-`);
-
 const Login: FC = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  const dispatch = useDispatch();
+  const themeMode = useSelector((state: RootState) => state.system.themeMode);
 
   const methods = useForm<LoginFormNames>({
     mode: 'onSubmit',
@@ -53,8 +47,30 @@ const Login: FC = () => {
     },
   });
 
+  const DivBGContainer = useMemo(
+    () =>
+      styled('div')(`
+        background-color: ${themeMode === 'light' ? 'rgb(255, 255, 255)' : 'rgb(0, 0, 0)'};
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-image: url('/assets/gradient-bg.svg');
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+      `),
+    [themeMode],
+  );
+
   const onSubmit = (v: any) => {
     console.log(v);
+  };
+
+  const onChangeThemeMode = () => {
+    //
+    dispatch(changeThemeMode());
   };
 
   const hasUsernameError = !!methods.formState.errors.username;
@@ -62,16 +78,27 @@ const Login: FC = () => {
 
   return (
     <DivBGContainer>
-      <Container component="main" maxWidth="sm">
-        <CssBaseline />
+      <Paper
+        component="header"
+        sx={{
+          position: 'fixed',
+          top: 0,
+          right: 0,
+        }}
+      >
+        <Button variant="text" onClick={onChangeThemeMode}>
+          {themeMode === 'light' ? <LightMode /> : <DarkMode />}
+        </Button>
+      </Paper>
 
+      <Container component="main" maxWidth="sm">
         <Card>
           <CardHeader
             title="Log in"
             subheader={
               <Typography>
                 Don't have an account?{' '}
-                <Link component={LinkBehavior} to="/">
+                <Link component={LinkBehavior} to="/register">
                   Register
                 </Link>
               </Typography>

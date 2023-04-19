@@ -5,6 +5,7 @@ import ErrorBoundary from '@pages/ErrorBoundary';
 import Login from '@pages/Login';
 import Layout from '@components/Layout';
 import SvgLine from '@pages/SvgLine';
+import Register from '@pages/Register';
 
 export const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ export const router = createBrowserRouter([
       },
       {
         path: '/register',
-        element: <Login />,
+        element: <Register />,
       },
     ],
   },

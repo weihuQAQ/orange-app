@@ -22,7 +22,9 @@
       "@helper/*": ["src/helper/*"],
       "@hooks/*": ["src/hooks/*"],
       "@theme": ["src/theme"],
-      "@theme/*": ["src/theme/*"]
+      "@theme/*": ["src/theme/*"],
+      "@store": ["src/store"],
+      "@store/*": ["src/store/*"]
     }
   },
   "include": ["src"]
