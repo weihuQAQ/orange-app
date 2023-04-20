@@ -84,9 +84,11 @@ const Login: FC = () => {
           position: 'fixed',
           top: 0,
           right: 0,
+          my: '4px',
+          mx: '8px',
         }}
       >
-        <Button variant="text" onClick={onChangeThemeMode}>
+        <Button size="small" variant="text" onClick={onChangeThemeMode}>
           {themeMode === 'light' ? <LightMode /> : <DarkMode />}
         </Button>
       </Paper>
