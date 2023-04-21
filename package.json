@@ -21,7 +21,8 @@
     "react-query": "^3.39.3",
     "react-redux": "^8.0.5",
     "react-router": "^6.9.0",
-    "react-router-dom": "^6.9.0"
+    "react-router-dom": "^6.9.0",
+    "simplebar-react": "^3.2.4"
   },
   "devDependencies": {
     "@types/node": "^18.15.10",

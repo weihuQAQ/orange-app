@@ -6,6 +6,7 @@ import { store } from '@store';
 import App from './app';
 
 import './index.css';
+import 'simplebar-react/dist/simplebar.min.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

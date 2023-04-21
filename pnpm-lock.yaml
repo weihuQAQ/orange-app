@@ -40,6 +40,9 @@ dependencies:
   react-router-dom:
     specifier: ^6.9.0
     version: registry.npmmirror.com/react-router-dom@6.9.0(react-dom@18.2.0)(react@18.2.0)
+  simplebar-react:
+    specifier: ^3.2.4
+    version: registry.npmmirror.com/simplebar-react@3.2.4(react@18.2.0)
 
 devDependencies:
   '@types/node':
@@ -1198,6 +1201,20 @@ packages:
     version: 0.0.29
     dev: true
 
+  registry.npmmirror.com/@types/lodash-es@4.17.7:
+    resolution: {integrity: sha512-z0ptr6UI10VlU6l5MYhGwS4mC8DZyYer2mCoyysZtSF7p26zOX8UpbrV0YpNYLGS8K4PUFIyEr62IMFFjveSiQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash-es/-/lodash-es-4.17.7.tgz}
+    name: '@types/lodash-es'
+    version: 4.17.7
+    dependencies:
+      '@types/lodash': registry.npmmirror.com/@types/lodash@4.14.194
+    dev: false
+
+  registry.npmmirror.com/@types/lodash@4.14.194:
+    resolution: {integrity: sha512-r22s9tAS7imvBt2lyHC9B8AGwWnXaYb1tY09oyLkXDs4vArpYJzw09nj8MLx5VfciBPGIb+ZwG0ssYnEPJxn/g==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.194.tgz}
+    name: '@types/lodash'
+    version: 4.14.194
+    dev: false
+
   registry.npmmirror.com/@types/node@18.15.10:
     resolution: {integrity: sha512-9avDaQJczATcXgfmMAW3MIWArOO7A+m90vuCFLr8AotWf8igO/mRoYukrk2cqZVtv38tHs33retzHEilM7FpeQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.15.10.tgz}
     name: '@types/node'
@@ -1691,6 +1708,12 @@ packages:
     name: callsites
     version: 3.1.0
     engines: {node: '>=6'}
+
+  registry.npmmirror.com/can-use-dom@0.1.0:
+    resolution: {integrity: sha512-ceOhN1DL7Y4O6M0j9ICgmTYziV89WMd96SvSl0REd8PMgrY0B/WBOPoed5S1KUmJqXgUXh8gzSe6E3ae27upsQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/can-use-dom/-/can-use-dom-0.1.0.tgz}
+    name: can-use-dom
+    version: 0.1.0
+    dev: false
 
   registry.npmmirror.com/caniuse-lite@1.0.30001472:
     resolution: {integrity: sha512-xWC/0+hHHQgj3/vrKYY0AAzeIUgr7L9wlELIcAvZdDUHlhL/kNxMdnQLOSOQfP8R51ZzPhmHdyMkI0MMpmxCfg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001472.tgz}
@@ -3101,11 +3124,23 @@ packages:
       p-locate: registry.npmmirror.com/p-locate@5.0.0
     dev: true
 
+  registry.npmmirror.com/lodash-es@4.17.21:
+    resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash-es/-/lodash-es-4.17.21.tgz}
+    name: lodash-es
+    version: 4.17.21
+    dev: false
+
   registry.npmmirror.com/lodash.merge@4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash.merge/-/lodash.merge-4.6.2.tgz}
     name: lodash.merge
     version: 4.6.2
     dev: true
+
+  registry.npmmirror.com/lodash@4.17.21:
+    resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/lodash/-/lodash-4.17.21.tgz}
+    name: lodash
+    version: 4.17.21
+    dev: false
 
   registry.npmmirror.com/loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/loose-envify/-/loose-envify-1.4.0.tgz}
@@ -3848,6 +3883,29 @@ packages:
       get-intrinsic: registry.npmmirror.com/get-intrinsic@1.2.0
       object-inspect: registry.npmmirror.com/object-inspect@1.12.3
     dev: true
+
+  registry.npmmirror.com/simplebar-core@1.2.4:
+    resolution: {integrity: sha512-P+Sqshef4fq3++gQ82TgNYcgl3qZFSCP5jS2/8NMmw18oagXOijMzs1G+vm6RUY3oMvpwH3wGoqh9u6SyDjHfQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/simplebar-core/-/simplebar-core-1.2.4.tgz}
+    name: simplebar-core
+    version: 1.2.4
+    dependencies:
+      '@types/lodash-es': registry.npmmirror.com/@types/lodash-es@4.17.7
+      can-use-dom: registry.npmmirror.com/can-use-dom@0.1.0
+      lodash: registry.npmmirror.com/lodash@4.17.21
+      lodash-es: registry.npmmirror.com/lodash-es@4.17.21
+    dev: false
+
+  registry.npmmirror.com/simplebar-react@3.2.4(react@18.2.0):
+    resolution: {integrity: sha512-ogLN79e7JUm82wJChD7NSUB+4EHCFvDkjXpiu8hT1Alk7DnCekUWds61NXcsP9jC97KOgF5To/AVjYFbX0olgg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/simplebar-react/-/simplebar-react-3.2.4.tgz}
+    id: registry.npmmirror.com/simplebar-react/3.2.4
+    name: simplebar-react
+    version: 3.2.4
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: registry.npmmirror.com/react@18.2.0
+      simplebar-core: registry.npmmirror.com/simplebar-core@1.2.4
+    dev: false
 
   registry.npmmirror.com/slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz}
