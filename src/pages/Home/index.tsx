@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, Fragment, useState } from 'react';
 
 import { styled, Theme, CSSObject } from '@mui/material/styles';
 
@@ -15,7 +15,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import { Scrollbar } from '@components/Scrollbar';
 import { neutral } from '@theme/color';
 
-const drawerWidth = 240;
+const drawerWidth = 280;
 
 const openedMenubarMixin = (theme: Theme): CSSObject => ({
   width: drawerWidth,
@@ -117,8 +117,20 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 }));
 
+const navbarMenus = [
+  {
+    title: '',
+    menus: ['Overview', 'Analytics', 'E-Commerce', 'Crypto', 'Account'],
+  },
+  {
+    title: '',
+    menus: ['All mail', 'Trash', 'Spam', 'All mail 2', 'Trash 2', 'Spam 2', 'All mail 3', 'Trash 3', 'Spam 3'],
+  },
+];
+
 const Home: FC = () => {
   const [open, setOpen] = useState(true);
+  const [activeNav, setActiveNav] = useState(navbarMenus[0].menus[0]);
 
   const handleDrawerToggle = () => {
     setOpen(!open);
@@ -164,71 +176,52 @@ const Home: FC = () => {
                 {open ? <ChevronLeftIcon /> : <ChevronRightIcon />}
               </IconButton>
             </DrawerHeader>
-            <Divider light color="#2F3746" />
-            <List>
-              {['Overview', 'Analytics', 'E-Commerce', 'Crypto', 'Account'].map((text, index) => (
-                <ListItem
-                  key={text}
-                  disablePadding
-                  sx={{
-                    display: 'block',
-                    '&:not(style) + :not(style)': {
-                      pt: '4px',
-                    },
-                  }}
-                >
-                  <ListItemButton
-                    selected={index === 0}
-                    sx={{
-                      justifyContent: open ? 'initial' : 'center',
-                      px: '16px',
-                      py: '6px',
-                      borderRadius: '8px',
-                    }}
-                  >
-                    <ListItemIcon
-                      sx={{
-                        minWidth: 0,
-                        mr: open ? 3 : 'auto',
-                        justifyContent: 'center',
-                        color: index === 0 ? 'var(--nav-item-icon-active-color)' : 'var(--nav-item-icon-color)',
-                      }}
-                    >
-                      {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                    </ListItemIcon>
-                    <ListItemText primary={text} sx={{ opacity: open ? 1 : 0, m: 0 }} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-            </List>
-            <Divider light color="#2F3746" />
-            <List>
-              {['All mail', 'Trash', 'Spam', 'All mail 2', 'Trash 2', 'Spam 2', 'All mail 3', 'Trash 3', 'Spam 3'].map(
-                (text, index) => (
-                  <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-                    <ListItemButton
-                      sx={{
-                        minHeight: 48,
-                        justifyContent: open ? 'initial' : 'center',
-                        px: 2.5,
-                      }}
-                    >
-                      <ListItemIcon
+
+            {navbarMenus.map((menu, index) => {
+              return (
+                <Fragment key={index}>
+                  <Divider light color="#2F3746" />
+                  <List>
+                    {menu.menus.map((nav, index) => (
+                      <ListItem
+                        key={nav}
+                        disablePadding
                         sx={{
-                          minWidth: 0,
-                          mr: open ? 3 : 'auto',
-                          justifyContent: 'center',
-                          color: 'var(--nav-item-icon-color)',
+                          display: 'block',
+                          '&:not(style) + :not(style)': {
+                            pt: '4px',
+                          },
                         }}
                       >
-                        {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                      </ListItemIcon>
-                      <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                    </ListItemButton>
-                  </ListItem>
-                ),
-              )}
-            </List>
+                        <ListItemButton
+                          onClick={() => setActiveNav(nav)}
+                          selected={activeNav === nav}
+                          sx={{
+                            justifyContent: open ? 'initial' : 'center',
+                            px: '16px',
+                            py: '6px',
+                            borderRadius: '8px',
+                          }}
+                        >
+                          <ListItemIcon
+                            sx={{
+                              minWidth: 0,
+                              mr: open ? 3 : 'auto',
+                              justifyContent: 'center',
+                              color:
+                                activeNav === nav ? 'var(--nav-item-icon-active-color)' : 'var(--nav-item-icon-color)',
+                            }}
+                          >
+                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                          </ListItemIcon>
+                          <ListItemText primary={nav} sx={{ opacity: open ? 1 : 0, m: 0 }} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Fragment>
+              );
+            })}
           </Box>
         </Scrollbar>
       </Drawer>
