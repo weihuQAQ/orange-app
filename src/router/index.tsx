@@ -7,6 +7,7 @@ import Layout from '@components/Layout';
 import SvgLine from '@pages/SvgLine';
 import Register from '@pages/Register';
 import Home from '@pages/Home';
+import Tools from '@pages/Tools';
 
 export const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: 'svg',
         element: <SvgLine />,
+      },
+      {
+        path: 'tools',
+        element: <Tools />,
       },
     ],
   },
